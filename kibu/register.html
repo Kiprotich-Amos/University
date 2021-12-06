@@ -1,0 +1,73 @@
+<html>
+    <body>
+        <div class="container bg-dark mb-4">
+            <div class="col">
+                <div class="card mb-4">
+                    <div class=" card-header"> 
+                        <span> Register</span>
+                    </div>
+                    <div class=" card-body">
+                        <form method="POST" action="">
+
+                            {% csrf_token %}
+                            <div class="form-outline mb-4">
+                                <div>
+                                    <span>username</span>
+                                </div>
+                                {{form.username}}
+                            </div>
+            
+                            <div class="form-outline mb-4">
+                                <div>
+                                    <span>Email</span>
+                                </div>
+                                {{form.email}}
+                            </div>
+    
+                            <div class="form-outline mb-4">
+                                <div>
+                                    <span>Password</span>
+                                </div>
+                                {{form.password1}}
+                            </div>
+            
+                            <div class="form-outline mb-4">
+                                <div>
+                                    <span>Re-Enter Password</span>
+                                </div>
+                                {{form.password2}}
+                            </div>
+    
+                            <div>
+                                <div>
+                                    <span>  
+
+                                    </span>
+                                </div>
+                                <input class = "btn btn-primary btn-block mb-4" type="submit" value="Register Account">
+                            </div>
+                        </form>
+            
+                        <div>
+                            already have an accounnt? <a href="{% url 'login' %}" class="ml-2">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var form_field = document.getElementByIdTagName('input')
+            form_field[1].placeholder = 'Username..';
+            form_field[2].placeholder = 'Email..';
+            form_field[3].placeholder = 'Enter password... ';
+            form_field[4].placeholder = 'Re-enter password....';
+
+            for (var field in form_field){
+                form_field[field].className += ' form-control '
+            }
+
+        </script>
+
+    </body>
+</html>
